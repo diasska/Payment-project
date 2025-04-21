@@ -29,7 +29,7 @@ public class PaymentTransaction extends BaseEntity{
     @JoinColumn(name = "sourceBankAccountId")
     private BankAccount sourceBankAccount;
     @ManyToOne
-    @JoinColumn(name = "destinatiomBankAccountId")
+    @JoinColumn(name = "destinationBankAccountId")
     private BankAccount destinationBankAccount;
 
     @OneToMany(mappedBy = "paymentTransaction", cascade = CascadeType.ALL, orphanRemoval = true)

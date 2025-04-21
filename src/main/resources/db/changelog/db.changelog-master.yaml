@@ -1,3 +1,3 @@
 databaseChangeLog:
-  - include: 
+  - includeAll:
       path: db/changelog/releases
