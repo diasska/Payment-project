@@ -10,17 +10,22 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Slf4j
 @RequiredArgsConstructor
 @Service
 public class PaymentTransactionService {
     private final PaymentTransactionRepository paymentTransactionRepository;
-    private final PaymentTransactionMapper paymentTransactionMapper;
+
 
     @Transactional
     public PaymentTransaction save(PaymentTransaction paymentTransaction) {
         return paymentTransactionRepository.save(paymentTransaction);
+    }
 
-
+    @Transactional
+    public Optional<PaymentTransaction> findById(Long id) {
+        return paymentTransactionRepository.findById(id);
     }
 }
